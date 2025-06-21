@@ -1,10 +1,20 @@
-import React from 'react'
+import React, { useState } from 'react'
+import SideBar from './components/SideBar'
+import Dashbord from './components/Dashbord'
 
 const App = () => {
+  const [sidebarToggle,setSidebarToggle] = useState(false);
+
   return (
-    <div className='text-red-600'>
-      Hello world
-    
+    <div className='flex'> 
+       <SideBar 
+          sidebarToggle = {sidebarToggle}
+       />
+       <Dashbord
+          
+          sidebarToggle = {sidebarToggle}
+          setSidebarToggle={setSidebarToggle}
+       />
     </div>
   )
 }
